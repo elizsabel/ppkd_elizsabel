@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ppkd_elizsabel/tugas1/tugas1.dart';
+import 'package:ppkd_elizsabel/tugas2/tugas2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,7 +32,8 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.pinkAccent),
       ),
-      home: ColumnWidgetDay7(),
+      //home: ColumnWidgetDay7(),
+      home: Tugas2WidgetDay9(),
     );
   }
 }
