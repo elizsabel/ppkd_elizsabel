@@ -13,6 +13,7 @@ class Tugas2WidgetDay9 extends StatelessWidget {
         ),
         backgroundColor: Color.fromARGB(255, 176, 177, 105),
       ),
+      
       body: Column(
         children: [
           Expanded(
