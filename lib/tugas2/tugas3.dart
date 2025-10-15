@@ -8,9 +8,9 @@ class Tugas3MyWidgetDay10 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Home"),
-        backgroundColor: const Color.fromARGB(248, 198, 166, 240),
+        backgroundColor: const Color(0xFF777C6D),
       ),
-      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+      backgroundColor: const Color(0xFFCBCBCB),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -27,8 +27,8 @@ class Tugas3MyWidgetDay10 extends StatelessWidget {
               child: Container(
                 padding: EdgeInsets.all(15.0),
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 170, 130, 235),
-                  borderRadius: BorderRadius.circular(20),
+                  color: const Color(0xFFB7B89F),
+                  //borderRadius: BorderRadius.circular(20),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,7 +39,7 @@ class Tugas3MyWidgetDay10 extends StatelessWidget {
                       decoration: InputDecoration(
                         contentPadding: EdgeInsets.all(10.0),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
+                          //borderRadius: BorderRadius.circular(10),
                         ),
                         hintText: "Masukan Nama Anda",
                       ),
@@ -53,7 +53,7 @@ class Tugas3MyWidgetDay10 extends StatelessWidget {
                       decoration: InputDecoration(
                         contentPadding: EdgeInsets.all(10.0),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
+                          //borderRadius: BorderRadius.circular(10),
                         ),
                         hintText: "Masukkan Email Anda",
                       ),
@@ -67,7 +67,7 @@ class Tugas3MyWidgetDay10 extends StatelessWidget {
                       decoration: InputDecoration(
                         contentPadding: EdgeInsets.all(10.0),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
+                          //borderRadius: BorderRadius.circular(10),
                         ),
                         hintText: "Masukan Nomor Anda",
                       ),
@@ -81,7 +81,7 @@ class Tugas3MyWidgetDay10 extends StatelessWidget {
                       decoration: InputDecoration(
                         contentPadding: EdgeInsets.all(60.0),
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
+                          //borderRadius: BorderRadius.circular(),
                         ),
                         hintText: "Masukan Deskripsi Anda",
                       ),
@@ -96,23 +96,26 @@ class Tugas3MyWidgetDay10 extends StatelessWidget {
               "Galeri Grid",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            GridView.builder(
-              padding: EdgeInsets.all(10),
+            GridView.count(
+              crossAxisSpacing: 5,
+              mainAxisSpacing: 5,
+              crossAxisCount: 3,
+              physics: NeverScrollableScrollPhysics(),
               shrinkWrap: true,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-                crossAxisSpacing: 6,
-                mainAxisSpacing: 6,
-              ),
-              itemCount: 6,
-              itemBuilder: (BuildContext context, int index) {
+              padding: EdgeInsets.only(left: 20, right: 30, bottom: 20),
+              children: List.generate(6, (index) {
                 return Container(
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 179, 125, 223),
-                    borderRadius: BorderRadius.circular(20),
+                  alignment: Alignment.center,
+                  color: Color(0xFFB7B89F),
+
+                  //Memberi text pada Box
+                  child: Stack(
+                    children: [
+                      Text("box ${index + 1}", style: TextStyle(fontSize: 15)),
+                    ],
                   ),
                 );
-              },
+              }),
             ),
           ],
         ),
