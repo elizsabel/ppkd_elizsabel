@@ -6,7 +6,7 @@ class Tugas4MyWidgetDay10 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Home"), backgroundColor: Color(0xFFA59D84)),
+      appBar: AppBar(title: Text("Home"), backgroundColor: Color(0xFFB6AE9F)),
       body: ListView(
         physics: BouncingScrollPhysics(),
         padding: EdgeInsets.all(10),
