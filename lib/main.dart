@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ppkd_elizsabel/tugas1/tugas1.dart';
-import 'package:ppkd_elizsabel/tugas2/tugas2.dart';
-import 'package:ppkd_elizsabel/tugas2/tugas3.dart';
-import 'package:ppkd_elizsabel/tugas2/tugas4.dart';
-import 'package:ppkd_elizsabel/tugas2/tugas5.dart';
 import 'package:ppkd_elizsabel/tugas2/tugas6.dart';
 
 void main() {

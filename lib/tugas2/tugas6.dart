@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ppkd_elizsabel/tugas2/appcolor.dart';
+import 'package:ppkd_elizsabel/tugas2/textfield.dart';
 
 class Day13Figma extends StatefulWidget {
   const Day13Figma({super.key});
@@ -12,6 +14,7 @@ class _Day13FigmaState extends State<Day13Figma> {
   Widget build(BuildContext context) {
     const String customFont = "Inter";
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.only(top: 119.0),
         child: Column(
@@ -27,44 +30,22 @@ class _Day13FigmaState extends State<Day13Figma> {
               ),
             ),
 
-            Padding(
-              padding: const EdgeInsets.only(left: 37, right: 35),
-              child: TextField(
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.all(10.0),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(3),
-                  ),
-                  hintText: "Mobile number or email address",
-                  hintStyle: TextStyle(fontSize: 14),
-                ),
-              ),
-            ),
+            // Mobile number or email
+            TextFieldwidget(hintText: "Mobile number or email address"),
 
             SizedBox(height: 15),
 
-            //BARIS 2 password
-            Padding(
-              padding: const EdgeInsets.only(left: 37, right: 35),
-              child: TextField(
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.all(10.0),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(3),
-                  ),
-                  hintText: "Password",
-                  hintStyle: TextStyle(fontSize: 14),
-                ),
-              ),
-            ),
+            //  password
+            TextFieldwidget(hintText: "Password"),
 
             SizedBox(height: 15),
 
+            //log in
             Container(
               width: 322,
-              height: 42,
+              height: 45,
               decoration: BoxDecoration(
-                color: Colors.blue[700],
+                color: AppColors.darkBlue,
                 borderRadius: BorderRadius.circular(3),
               ),
               child: TextButton(
@@ -83,12 +64,134 @@ class _Day13FigmaState extends State<Day13Figma> {
               ),
             ),
 
-            SizedBox(height: 15),
-            Column(
+            SizedBox(height: 10),
+
+            //Forgotten Password
+            InkWell(
+              child: TextButton(
+                onPressed: () {
+                  print("Menekan Forgotten Password");
+                },
+                child: Column(
+                  children: [
+                    Text(
+                      "Forgotten Password?",
+                      style: TextStyle(color: AppColors.darkBlue),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+
+            SizedBox(height: 0.0),
+
+            // Buat garis
+            Container(
+              width: 322,
+              height: 30,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Expanded(child: Container(height: 1, color: AppColors.grey1)),
+                  SizedBox(width: 10),
+                  Text(
+                    "or",
+                    style: TextStyle(fontSize: 12, color: AppColors.grey1),
+                  ),
+                  SizedBox(width: 10),
+                  Expanded(child: Container(height: 1, color: AppColors.grey1)),
+                ],
+              ),
+            ),
+
+            SizedBox(height: 10),
+
+            // buat create new account
+            Container(
+              width: 254,
+              height: 38,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(3.0),
+                border: Border.all(color: AppColors.grey1),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(0.0),
+
+                child: TextButton(
+                  onPressed: () {
+                    print("Create new account");
+                  },
+                  child: Text(
+                    "Create new account",
+                    style: TextStyle(
+                      fontWeight: FontWeight.normal,
+                      fontFamily: customFont,
+                      fontSize: 16,
+                      color: AppColors.black1,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+            SizedBox(height: 100),
+
+            //teks english UK
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  child: Column(
+                    children: [
+                      Text(
+                        "English (UK)",
+                        style: TextStyle(color: AppColors.grey2, fontSize: 13),
+                      ),
+                      Text(
+                        " اردو",
+                        style: TextStyle(color: AppColors.grey2, fontSize: 13),
+                      ),
+                      Text(
+                        " বাংলা ",
+                        style: TextStyle(color: AppColors.grey2, fontSize: 13),
+                      ),
+                    ],
+                  ),
+                ),
+
+                SizedBox(width: 60),
+
+                Container(
+                  child: Column(
+                    children: [
+                      Text(
+                        "English (UK)",
+                        style: TextStyle(color: AppColors.grey2, fontSize: 13),
+                      ),
+                      Text(
+                        " اردو",
+                        style: TextStyle(color: AppColors.grey2, fontSize: 13),
+                      ),
+                      Text(
+                        " বাংলা ",
+                        style: TextStyle(color: AppColors.grey2, fontSize: 13),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+
+            SizedBox(height: 30),
+
+            //Text Meta
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Forgotten Password?",
-                  style: TextStyle(color: Colors.blue[700]),
+                  "Meta © 2023",
+                  style: TextStyle(color: AppColors.grey2, fontSize: 14),
                 ),
               ],
             ),
