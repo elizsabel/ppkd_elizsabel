@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ppkd_elizsabel/tugas2/appcolor.dart';
-import 'package:ppkd_elizsabel/tugas2/textfield.dart';
+import 'package:ppkd_elizsabel/tugasflutter/appcolor.dart';
+import 'package:ppkd_elizsabel/tugasflutter/home_screen6.dart';
+import 'package:ppkd_elizsabel/tugasflutter/textfield.dart';
 
 class Day13Figma extends StatefulWidget {
   const Day13Figma({super.key});
@@ -50,7 +51,10 @@ class _Day13FigmaState extends State<Day13Figma> {
               ),
               child: TextButton(
                 onPressed: () {
-                  print("Log in");
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomeScreen()),
+                  );
                 },
                 child: Text(
                   "Log in",

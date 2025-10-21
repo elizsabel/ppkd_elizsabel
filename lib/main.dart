@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:ppkd_elizsabel/tugas2/tugas6.dart';
+import 'package:ppkd_elizsabel/NavButton/bottom.dart';
+import 'package:ppkd_elizsabel/NavButton/drawer.dart';
+import 'package:ppkd_elizsabel/NavButton/drawer.dart';
+import 'package:ppkd_elizsabel/NavButton/main_screen.dart';
+import 'package:ppkd_elizsabel/tugas8/tugas8.dart';
+import 'package:ppkd_elizsabel/tugasflutter/tugas6.dart';
+import 'package:ppkd_elizsabel/Tugas7/tugas7.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +38,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.pinkAccent),
       ),
       //home: ColumnWidgetDay7(),
-      home: Day13Figma(),
+      home: bottomNavBar2(),
     );
   }
 }
