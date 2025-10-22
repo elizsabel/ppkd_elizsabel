@@ -26,8 +26,12 @@ class _tugas8_2State extends State<tugas8_2> {
             ),
             SizedBox(height: 30),
             Text(
-              "GlowTap adalah aplikasi senter minimalis untuk perangkat Android yang dirancang untuk memberikan pencahayaan instan dengan hanya satu ketukan. Aplikasi ini mengubah lampu kilat (flash) perangkat Anda menjadi sumber cahaya yang dapat diandalkan dalam situasi gelap, darurat, atau penggunaan sehari-hari. Dengan antarmuka yang sederhana dan tanpa fitur tambahan yang rumit, GlowTap fokus pada pengalaman pengguna yang cepat dan efisien.",
+              "GlowTap adalah aplikasi mobile layanan home service perawatan kecantikan profesional yang menghadirkan pengalaman perawatan ekslusif langsung ke rumah anda. dengan menghubungkan pengguna dan dokter kecantikan bersertifikat, GlowTap menawarkan cara baru untuk merawat kulit secara aman, nyaman, dan personal - hanya dengan satu sentuhan.",
+              textAlign: TextAlign.justify,
             ),
+            // Text(
+            //   "GlowTap hadir dari kebutuhan masyarakat modern yang menginginkan perawatan wajah seperti skinbooster, DNA Salmon, dan Botox tanpa harus datang ke klinik. melalui teknologi, GlowTap memberikan solusi inovatif yang menghubungkan kemudahan pemesanan online, layanan medis terpecaya, dan pengalaman premium seperti klinik mewah, namun fleksibel dan terjangkau",
+            // ),
             Spacer(),
             SizedBox(height: 80),
             Text("Elizsabel"),
