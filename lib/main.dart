@@ -3,6 +3,7 @@ import 'package:ppkd_elizsabel/NavButton/bottom.dart';
 import 'package:ppkd_elizsabel/NavButton/drawer.dart';
 import 'package:ppkd_elizsabel/NavButton/drawer.dart';
 import 'package:ppkd_elizsabel/NavButton/main_screen.dart';
+import 'package:ppkd_elizsabel/Tugas7/menu_tugas7.dart';
 import 'package:ppkd_elizsabel/tugas8/tugas8.dart';
 import 'package:ppkd_elizsabel/tugasflutter/tugas6.dart';
 import 'package:ppkd_elizsabel/Tugas7/tugas7.dart';

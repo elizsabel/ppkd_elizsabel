@@ -15,6 +15,7 @@ class _menu_tugas7State extends State<menu_tugas7> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(height: 20),
         Row(
           children: [
             Checkbox(
@@ -30,7 +31,7 @@ class _menu_tugas7State extends State<menu_tugas7> {
           ],
         ),
         ElevatedButton(
-          style: ElevatedButton.styleFrom(backgroundColor: AppColors.darkBlue),
+          style: ElevatedButton.styleFrom(backgroundColor: Color(0XFFF5BABB)),
           onPressed: isChecked ? () {} : null,
           child: Text(
             isChecked
@@ -96,6 +97,7 @@ class _dropDown7State extends State<dropDown7> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(height: 20),
         Text("Pilih Kategori Produk"),
         DropdownButton(
           value: dropDownValue,
@@ -139,11 +141,12 @@ class _DatePicker7State extends State<DatePicker7> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(height: 20),
         ElevatedButton(
           onPressed: () async {
             final DateTime? picked = await showDatePicker(
               context: context,
-              firstDate: DateTime(2000),
+              firstDate: DateTime(1940),
               lastDate: DateTime(2100),
             );
             if (picked != null) {
@@ -182,6 +185,7 @@ class _timePicker7State extends State<timePicker7> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(height: 20),
         ElevatedButton(
           onPressed: () async {
             final TimeOfDay? picked = await showTimePicker(

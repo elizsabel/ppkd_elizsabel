@@ -10,6 +10,13 @@ class tugas7DateTime extends StatefulWidget {
 
 class _tugas7DateTime extends State<tugas7DateTime> {
   int _selectedIndex = 0;
+  static const List<String> _titles = [
+    "Syarat dan Ketentuan",
+    "Mode Gelap",
+    "Pilih Kategori Produk",
+    "Pilih Tanggal Lahir",
+    "Atur Pengingat",
+  ];
   static const List<Widget> _widgetOptions = [
     // Center(child: Text("Home")),
     menu_tugas7(),
@@ -28,7 +35,10 @@ class _tugas7DateTime extends State<tugas7DateTime> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Home")),
+      appBar: AppBar(
+        title: Text(_titles[_selectedIndex]),
+        backgroundColor: Color(0XFFF5D2D2),
+      ),
       drawer: Drawer(
         child: ListView(
           children: [
