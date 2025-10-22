@@ -10,6 +10,7 @@ class tugas7DateTime extends StatefulWidget {
 
 class _tugas7DateTime extends State<tugas7DateTime> {
   int _selectedIndex = 0;
+  //judul appbar
   static const List<String> _titles = [
     "Syarat dan Ketentuan",
     "Mode Gelap",

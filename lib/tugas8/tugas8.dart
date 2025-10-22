@@ -8,7 +8,7 @@ class bottomNavBar2 extends StatefulWidget {
   @override
   State<bottomNavBar2> createState() => _bottomNavBar2();
 }
-
+//
 class _bottomNavBar2 extends State<bottomNavBar2> {
   int _selectedIndex = 0;
   static const List<Widget> _widgetOptions = [

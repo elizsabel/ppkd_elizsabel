@@ -9,6 +9,7 @@ class tugas8_2 extends StatefulWidget {
 
 class _tugas8_2State extends State<tugas8_2> {
   @override
+  //tentang aplikasi
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
