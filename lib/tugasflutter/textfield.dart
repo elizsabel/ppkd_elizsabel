@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TextFieldwidget extends StatelessWidget {
-  const TextFieldwidget({super.key, this.hintText});
+  const TextFieldwidget({super.key, this.hintText, required TextEditingController controller, required String? Function(dynamic value) validator, required bool isPassword});
   final String? hintText;
   @override
   Widget build(BuildContext context) {

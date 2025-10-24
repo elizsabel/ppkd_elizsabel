@@ -32,12 +32,12 @@ class _Day13FigmaState extends State<Day13Figma> {
             ),
 
             // Mobile number or email
-            TextFieldwidget(hintText: "Mobile number or email address"),
+            // TextFieldwidget(hintText: "Mobile number or email address"),
 
             SizedBox(height: 15),
 
             //  password
-            TextFieldwidget(hintText: "Password"),
+            // TextFieldwidget(hintText: "Password"),
 
             SizedBox(height: 15),
 

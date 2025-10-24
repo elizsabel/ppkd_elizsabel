@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:ppkd_elizsabel/Tugas_10/home_screen10.dart';
 
-class LoginScreen10 extends StatefulWidget {
-  const LoginScreen10({super.key});
-  static const id = "/login_screen11";
+class LoginScreen10_1 extends StatefulWidget {
+  const LoginScreen10_1({super.key});
+  static const id = "/login_screen17";
 
   @override
-  State<LoginScreen10> createState() => _LoginScreen10State();
+  State<LoginScreen10_1> createState() => _LoginScreen10_1State();
 }
 
-class _LoginScreen10State extends State<LoginScreen10> {
+class _LoginScreen10_1State extends State<LoginScreen10_1> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController nameController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
