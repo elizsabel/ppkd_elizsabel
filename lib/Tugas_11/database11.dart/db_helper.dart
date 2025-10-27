@@ -1,10 +1,8 @@
 import 'package:path/path.dart';
-import 'package:ppkd_elizsabel/Tugas_11/model/User_Model.dart';
 import 'package:ppkd_elizsabel/Tugas_11/model/customer_model.dart';
 import 'package:sqflite/sqflite.dart';
 
 class DbHelper {
-  static const tableUser = 'users';
   static const tableCustomer = 'Customer';
   static Future<Database> db() async {
     final dbPath = await getDatabasesPath();
@@ -12,59 +10,39 @@ class DbHelper {
       join(dbPath, 'GlowTap.db'),
       onCreate: (db, version) async {
         await db.execute(
-          "CREATE TABLE $tableUser(id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT, email TEXT, password TEXT)",
+          "CREATE TABLE $tableCustomer(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, username TEXT, email TEXT, phone TEXT, city TEXT, password TEXT)",
         );
       },
-      onUpgrade: (db, oldVersion, newVersion) async {
-        if (oldVersion < newVersion) {
-          await db.execute(
-            "CREATE TABLE $tableCustomer(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, email TEXT, phone INT, city TEXT, password INT)",
-          );
-        }
-      },
-
-      version: 6,
+      version: 1,
     );
   }
 
-  static Future<void> registerUser(UserModel user) async {
+  static Future<void> registerUser(CustomerModel user) async {
     final dbs = await db();
     //Insert adalah fungsi untuk menambahkan data (CREATE)
     await dbs.insert(
-      tableUser,
+      tableCustomer,
       user.toMap(),
       conflictAlgorithm: ConflictAlgorithm.replace,
     );
     print(user.toMap());
   }
 
-  static Future<UserModel?> loginUser({
+  static Future<CustomerModel?> loginUser({
     required String email,
     required String password,
   }) async {
     final dbs = await db();
     //query adalah fungsi untuk menampilkan data (READ)
     final List<Map<String, dynamic>> results = await dbs.query(
-      tableUser,
+      tableCustomer,
       where: 'email = ? AND password = ?',
       whereArgs: [email, password],
     );
     if (results.isNotEmpty) {
-      return UserModel.fromMap(results.first);
+      return CustomerModel.fromMap(results.first);
     }
     return null;
-  }
-
-  //MENAMBAHKAN CUSTOMER
-  static Future<void> createCustomer(CustomerModel customer) async {
-    final dbs = await db();
-    //Insert adalah fungsi untuk menambahkan data (CREATE)
-    await dbs.insert(
-      tableCustomer,
-      customer.toMap(),
-      conflictAlgorithm: ConflictAlgorithm.replace,
-    );
-    print(customer.toMap());
   }
 
   //GET SISWA

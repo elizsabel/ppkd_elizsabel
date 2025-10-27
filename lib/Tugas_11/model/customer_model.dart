@@ -2,40 +2,40 @@ import 'dart:convert';
 
 class CustomerModel {
   int? id;
+  String username;
   String name;
   String email;
-  int phone;
-  String city;
-  int password;
+  String phone;
+  String password;
 
   CustomerModel({
     this.id,
+    required this.username,
     required this.name,
     required this.email,
     required this.phone,
-    required this.city,
     required this.password,
   });
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'id': id,
+      'username' : username,
       'name': name,
       'email': email,
       'phone': phone,
-      'city': city,
       'password': password,
     };
   }
 
   factory CustomerModel.fromMap(Map<String, dynamic> map) {
     return CustomerModel(
-      id: map['id'] as int,
+      id: map['id'] != null ? map['id'] as int : null,
       name: map['name'] as String,
+      username: map['username'] as String,
+      phone: map['phone'] as String,
       email: map['email'] as String,
-      phone: map['phone'] as int,
-      city: map['city'] as String,
-      password: map['password'] as int,
+      password: map['password'] as String,
     );
   }
 

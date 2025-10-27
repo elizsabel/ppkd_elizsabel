@@ -2,8 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:ppkd_elizsabel/Tugas_11/database11.dart/db_helper.dart';
-import 'package:ppkd_elizsabel/Tugas_11/model/User_Model.dart';
-import 'package:ppkd_elizsabel/Tugas_11/view/create_customer11.dart';
+import 'package:ppkd_elizsabel/Tugas_11/model/customer_model.dart';
 
 class RegisterScreen11 extends StatefulWidget {
   const RegisterScreen11({super.key});
@@ -14,22 +13,31 @@ class RegisterScreen11 extends StatefulWidget {
 
 class _RegisterScreen11State extends State<RegisterScreen11> {
   final TextEditingController emailController = TextEditingController();
-  final TextEditingController usernameController = TextEditingController();
+  final TextEditingController nameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController usernameController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
-  final TextEditingController cityController = TextEditingController();
   bool isVisibility = false;
+  bool isFilled = false;
+
+  @override
+  void initState() {
+    super.initState();
+    emailController.addListener(_checkFields);
+    passwordController.addListener(_checkFields);
+  }
+
+  void _checkFields() {
+    setState(() {
+      isFilled =
+          emailController.text.isNotEmpty && passwordController.text.isNotEmpty;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(body: Stack(children: [buildBackground(), buildLayer()]));
   }
-
-  // register() async {
-  //   Navigator.push(
-  //     context,
-  //     MaterialPageRoute(builder: (context) => HomeScreenDay15()),
-  //   );
-  // }
 
   final _formKey = GlobalKey<FormState>();
   SafeArea buildLayer() {
@@ -53,6 +61,20 @@ class _RegisterScreen11State extends State<RegisterScreen11> {
                   // style: TextStyle(fontSize: 14, color: AppColor.gray88),
                 ),
                 height(24),
+                buildTitle("Nama"),
+                height(12),
+                buildTextField(
+                  hintText: "Masukkan Nama Anda",
+                  controller: nameController,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "Nama tidak boleh kosong";
+                    }
+                    return null;
+                  },
+                ),
+
+                height(16),
                 buildTitle("Username"),
                 height(12),
                 buildTextField(
@@ -61,6 +83,22 @@ class _RegisterScreen11State extends State<RegisterScreen11> {
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return "Username tidak boleh kosong";
+                    }
+                    return null;
+                  },
+                ),
+
+                height(16),
+                buildTitle("No. Handphone"),
+                height(12),
+                buildTextField(
+                  hintText: "Masukkan No. Handphone Anda",
+                  controller: phoneController,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Nomor HP tidak boleh kosong';
+                    } else if (value.length < 11) {
+                      return 'Nomor HP minimal 11 angka';
                     }
                     return null;
                   },
@@ -102,103 +140,31 @@ class _RegisterScreen11State extends State<RegisterScreen11> {
                     return null;
                   },
                 ),
-
-                height(16),
-                buildTitle("Number Phone"),
-                height(10),
-                buildTextField(
-                  hintText: "Enter your number phone",
-                  controller: phoneController,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return null;
-                    }
-                    if (!RegExp(r'^[0-9]+$').hasMatch(value)) {
-                      return "telephone numbers must not contain letters";
-                    }
-                    return null;
-                  },
-                ),
-                height(16),
-                buildTitle("City of Domicile"),
-                height(10),
-                buildTextField(
-                  hintText: "Enter your domicile",
-                  controller: cityController,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return "City of Domicile cannot be empty";
-                    }
-                    return null;
-                  },
-                ),
                 height(24),
                 LoginButton(
                   text: "Register",
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      print(emailController.text);
-                      final UserModel data = UserModel(
-                        email: emailController.text,
+                      final CustomerModel data = CustomerModel(
+                        name: nameController.text,
                         username: usernameController.text,
+                        phone: phoneController.text,
+                        email: emailController.text,
                         password: passwordController.text,
                       );
                       DbHelper.registerUser(data);
                       Fluttertoast.showToast(msg: "Register Berhasil");
-                      // PreferenceHandler.saveLogin(true);
                       Navigator.pop(context);
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (context) => DrawerWidgetDay15(),
-                      //   ),
-                      // );
-                    } else {
-                      // showDialog(
-                      //   context: context,
-                      //   builder: (context) {
-                      //     return AlertDialog(
-                      //       title: Text("Validation Error"),
-                      //       content: Text("Please fill all fields"),
-                      //       actions: [
-                      //         TextButton(
-                      //           child: Text("OK"),
-                      //           onPressed: () {
-                      //             Navigator.pop(context);
-                      //           },
-                      //         ),
-                      //         TextButton(
-                      //           child: Text("Ga OK"),
-                      //           onPressed: () {
-                      //             Navigator.pop(context);
-                      //           },
-                      //         ),
-                      //       ],
-                      //     );
-                      //   },
-                      // );
-                    }
+                    } else {}
                   },
                 ),
-                // height(20),
-                // LoginButton(
-                //   text: "Ke Day13",
-                //   onPressed: () {
-                //     Navigator.push(
-                //       context,
-                //       MaterialPageRoute(builder: (context) => DryWidgetDay13()),
-                //     );
-                //   },
-                // ),
+
                 height(16),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      "Have an account?",
-                      // style: TextStyle(fontSize: 12, color: AppColor.gray88),
-                    ),
+                    Text("Have an account?"),
                     TextButton(
                       onPressed: () {
                         Navigator.of(context).pop();
@@ -228,7 +194,7 @@ class _RegisterScreen11State extends State<RegisterScreen11> {
       width: double.infinity,
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage("assets/images/background.png"),
+          image: AssetImage("assets/images/glowtap.png"),
           fit: BoxFit.cover,
         ),
       ),
@@ -290,6 +256,36 @@ class _RegisterScreen11State extends State<RegisterScreen11> {
       children: [
         // Text(text, style: TextStyle(fontSize: 12, color: AppColor.gray88)),
       ],
+    );
+  }
+}
+
+class LoginButton extends StatelessWidget {
+  const LoginButton({super.key, this.onPressed, required this.text});
+  final void Function()? onPressed;
+  final String text;
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
+      height: 56,
+      child: ElevatedButton(
+        onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.blue,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+        ),
+        child: Text(
+          text,
+
+          // "Login",
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+      ),
     );
   }
 }

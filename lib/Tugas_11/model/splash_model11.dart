@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:ppkd_elizsabel/NavButton/drawer.dart';
 import 'package:ppkd_elizsabel/Tugas_11/Login_screen11.dart';
 import 'package:ppkd_elizsabel/Tugas_11/drawer_11.dart';
-import 'package:ppkd_elizsabel/login_new10/drawer_10.dart';
-import 'package:ppkd_elizsabel/login_new10/login_screen10_new.dart';
-import 'package:ppkd_elizsabel/login_new10/preference_handler.dart';
+import 'package:ppkd_elizsabel/Tugas_11/preferences/preference_handler.dart';
 import 'package:ppkd_elizsabel/tugas9/app_image.dart';
-import 'package:ppkd_elizsabel/tugas_10/login_screen10.dart';
 
-class SplashScreen10 extends StatefulWidget {
-  const SplashScreen10({super.key});
+class SplashPage extends StatefulWidget {
+  const SplashPage({super.key});
 
   @override
-  State<SplashScreen10> createState() => _SplashScreen10State();
+  State<SplashPage> createState() => _SplashPageState();
 }
 
-class _SplashScreen10State extends State<SplashScreen10> {
+class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
@@ -44,14 +40,14 @@ class _SplashScreen10State extends State<SplashScreen10> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold( backgroundColor: Colors.white,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Center(child: Image.asset("assets/images/poto.jpg")),
+          Center(child: Image.asset(AppImage.poto)),
           Text(
-            "Waiting...",
+            "GlowTap",
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
         ],

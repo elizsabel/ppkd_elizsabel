@@ -11,7 +11,9 @@ class AppImage {
   static const sweater = "$assetImage/sweater.jpg";
   static const rok = "$assetImage/rok.jpg";
   static const cargo = "$assetImage/cargo.jpg";
-  static const kulot = "$assetImage/kulot.jpg";
+   static const kulot = "$assetImage/kulot.jpg";
+  static const poto = "$assetImage/poto.jpg";
+
 
 
 }

@@ -4,6 +4,7 @@ import 'package:ppkd_elizsabel/Tugas_11/database11.dart/db_helper.dart';
 import 'package:ppkd_elizsabel/Tugas_11/drawer_11.dart';
 import 'package:ppkd_elizsabel/Tugas_11/view/register_screen11.dart';
 import 'package:ppkd_elizsabel/login_new10/preference_handler.dart';
+import 'package:ppkd_elizsabel/tugasflutter/appcolor.dart';
 import 'package:ppkd_elizsabel/tugasflutter/home_screen6.dart';
 
 class LoginScreen11 extends StatefulWidget {
@@ -25,7 +26,7 @@ class _LoginScreen11State extends State<LoginScreen11> {
   login() async {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => HomeScreen()),
+      MaterialPageRoute(builder: (context) => Drawer11()),
     );
   }
 
@@ -42,12 +43,8 @@ class _LoginScreen11State extends State<LoginScreen11> {
               // crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  "GlowTap",
-                  style: TextStyle(
-                    fontSize: 50,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFFF2AEBB),
-                  ),
+                  "Welcome Back",
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
                 height(12),
                 Text(
@@ -117,12 +114,10 @@ class _LoginScreen11State extends State<LoginScreen11> {
                 height(24),
                 LoginButton(
                   text: "Login",
-
                   onPressed: () async {
                     if (_formKey.currentState!.validate()) {
                       print(emailController.text);
                       PreferenceHandler.saveLogin(true);
-
                       final data = await DbHelper.loginUser(
                         email: emailController.text,
                         password: passwordController.text,
@@ -151,12 +146,6 @@ class _LoginScreen11State extends State<LoginScreen11> {
                                   Navigator.pop(context);
                                 },
                               ),
-                              TextButton(
-                                child: Text("Ga OK"),
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                },
-                              ),
                             ],
                           );
                         },
@@ -164,6 +153,7 @@ class _LoginScreen11State extends State<LoginScreen11> {
                     }
                   },
                 ),
+
                 // height(20),
                 // LoginButton(
                 //   text: "Ke Day13",
@@ -241,16 +231,10 @@ class _LoginScreen11State extends State<LoginScreen11> {
                             builder: (context) => RegisterScreen11(),
                           ),
                         );
-                        // context.push(RegisterScreen());
-                        // Navigator.pushReplacement(
-                        //   context,
-                        //   MaterialPageRoute(builder: (context) => MeetEmpatA()),
-                        // );
                       },
                       child: Text(
                         "Sign Up",
                         style: TextStyle(
-                          // color: AppColor.blueButton,
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
                         ),
@@ -272,7 +256,7 @@ class _LoginScreen11State extends State<LoginScreen11> {
       width: double.infinity,
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage("assets/images/background.png"),
+          image: AssetImage("assets/images/glowtap.png"),
           fit: BoxFit.cover,
         ),
       ),
@@ -292,18 +276,18 @@ class _LoginScreen11State extends State<LoginScreen11> {
       decoration: InputDecoration(
         hintText: hintText,
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32),
+          borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide(
             color: Colors.black.withOpacity(0.2),
             width: 1.0,
           ),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32),
+          borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide(color: Colors.black, width: 1.0),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32),
+          borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide(
             color: Colors.black.withOpacity(0.2),
             width: 1.0,

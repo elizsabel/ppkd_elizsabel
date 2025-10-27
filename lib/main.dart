@@ -5,6 +5,7 @@ import 'package:ppkd_elizsabel/NavButton/drawer.dart';
 import 'package:ppkd_elizsabel/NavButton/main_screen.dart';
 import 'package:ppkd_elizsabel/Tugas_10/login_screen10.dart';
 import 'package:ppkd_elizsabel/Tugas7/menu_tugas7.dart';
+import 'package:ppkd_elizsabel/Tugas_11/model/splash_model11.dart';
 import 'package:ppkd_elizsabel/login_new10/splash_screen.dart';
 import 'package:ppkd_elizsabel/tugas8/tugas8.dart';
 import 'package:ppkd_elizsabel/tugas9/drawerlist9.dart';
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.pinkAccent),
       ),
       //home: ColumnWidgetDay7(),
-      home: SplashScreen10(),
+      home: SplashPage(),
     );
   }
 }
