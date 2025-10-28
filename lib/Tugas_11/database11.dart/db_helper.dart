@@ -52,7 +52,7 @@ class DbHelper {
     print(results.map((e) => CustomerModel.fromMap(e)).toList());
     return results.map((e) => CustomerModel.fromMap(e)).toList();
   }
-  //UPDATE CDATA
+  //UPDATE DATA
   static Future<void> updateCustomer(CustomerModel customer) async {
     final dbs = await db();
     //Insert adalah fungsi untuk menambahkan data (CREATE)

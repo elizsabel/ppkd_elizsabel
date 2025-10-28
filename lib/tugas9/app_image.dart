@@ -13,7 +13,7 @@ class AppImage {
   static const cargo = "$assetImage/cargo.jpg";
    static const kulot = "$assetImage/kulot.jpg";
   static const poto = "$assetImage/poto.jpg";
-  static const empty = "$assetImage/empty.png";
+  static const empty = "$assetImage/empty.png"; //
 
 
 
