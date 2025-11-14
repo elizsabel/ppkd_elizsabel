@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ppkd_elizsabel/NavButton/drawer.dart';
 import 'package:ppkd_elizsabel/Tugas_11/Login_screen11.dart';
-import 'package:ppkd_elizsabel/Tugas_11/drawer_11.dart';
 import 'package:ppkd_elizsabel/login_new10/drawer_10.dart';
 import 'package:ppkd_elizsabel/login_new10/login_screen10_new.dart';
 import 'package:ppkd_elizsabel/login_new10/preference_handler.dart';
@@ -29,7 +28,7 @@ class _SplashScreen10State extends State<SplashScreen10> {
       if (isLogin != null && isLogin == true) {
         Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (context) => Drawer11()),
+          MaterialPageRoute(builder: (context) => Drawer_10()),
           (route) => false,
         );
       } else {
