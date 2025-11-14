@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ppkd_elizsabel/Tugas_11/Login_screen11.dart';
-import 'package:ppkd_elizsabel/Tugas_11/drawer_11.dart';
+import 'package:ppkd_elizsabel/Tugas15/views/homepage.dart';
+import 'package:ppkd_elizsabel/Tugas15/views/loginpage.dart';
 import 'package:ppkd_elizsabel/Tugas_11/preferences/preference_handler.dart';
 import 'package:ppkd_elizsabel/tugas9/app_image.dart';
 
@@ -25,13 +25,13 @@ class _SplashPageState extends State<SplashPage> {
       if (isLogin != null && isLogin == true) {
         Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (context) => Drawer11()),
+          MaterialPageRoute(builder: (context) => HomePageGlowTap()),
           (route) => false,
         );
       } else {
         Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (context) => LoginScreen11()),
+          MaterialPageRoute(builder: (context) => LoginCustGlow()),
           (route) => false,
         );
       }
@@ -40,7 +40,8 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold( backgroundColor: Colors.white,
+    return Scaffold(
+      backgroundColor: Colors.white,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,

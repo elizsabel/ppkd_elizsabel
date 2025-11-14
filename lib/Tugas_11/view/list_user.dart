@@ -19,8 +19,6 @@ class _ListUserPageState extends State<ListUserPage> {
 
   Future<void> _onEdit(CustomerModel customer) async {
     final editNameC = TextEditingController(text: customer.name);
-    final editPhoneC = TextEditingController(text: customer.phone.toString());
-    final editUsernameC = TextEditingController(text: customer.username);
     final editEmailC = TextEditingController(text: customer.email);
     final editPasswordC = TextEditingController(text: customer.password);
     final res = await showDialog(
@@ -34,8 +32,6 @@ class _ListUserPageState extends State<ListUserPage> {
             children: [
               buildTextField(hintText: "Name", controller: editNameC),
               buildTextField(hintText: "Email", controller: editEmailC),
-              buildTextField(hintText: "Phone", controller: editPhoneC),
-              buildTextField(hintText: "Username", controller: editUsernameC),
               buildTextField(hintText: "Password", controller: editPasswordC),
             ],
           ),
@@ -62,8 +58,6 @@ class _ListUserPageState extends State<ListUserPage> {
         id: customer.id,
         name: editNameC.text,
         email: editEmailC.text,
-        username: editUsernameC.text,
-        phone: editPhoneC.text,
         password: editPasswordC.text,
       );
       DbHelper.updateCustomer(updated);

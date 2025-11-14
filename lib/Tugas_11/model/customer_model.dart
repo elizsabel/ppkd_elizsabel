@@ -2,28 +2,22 @@ import 'dart:convert';
 
 class CustomerModel {
   int? id;
-  String username;
   String name;
   String email;
-  String phone;
   String password;
 
   CustomerModel({
     this.id,
-    required this.username,
     required this.name,
     required this.email,
-    required this.phone,
     required this.password,
   });
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'id': id,
-      'username' : username,
       'name': name,
       'email': email,
-      'phone': phone,
       'password': password,
     };
   }
@@ -32,8 +26,6 @@ class CustomerModel {
     return CustomerModel(
       id: map['id'] != null ? map['id'] as int : null,
       name: map['name'] as String,
-      username: map['username'] as String,
-      phone: map['phone'] as String,
       email: map['email'] as String,
       password: map['password'] as String,
     );

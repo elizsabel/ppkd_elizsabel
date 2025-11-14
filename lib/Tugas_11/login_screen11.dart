@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:ppkd_elizsabel/NavButton/drawer.dart';
 import 'package:ppkd_elizsabel/Tugas_11/database11.dart/db_helper.dart';
-import 'package:ppkd_elizsabel/Tugas_11/drawer_11.dart';
 import 'package:ppkd_elizsabel/Tugas_11/view/register_screen11.dart';
+import 'package:ppkd_elizsabel/login_new10/drawer_10.dart';
 import 'package:ppkd_elizsabel/login_new10/preference_handler.dart';
-import 'package:ppkd_elizsabel/tugasflutter/appcolor.dart';
-import 'package:ppkd_elizsabel/tugasflutter/home_screen6.dart';
+
 
 class LoginScreen11 extends StatefulWidget {
   const LoginScreen11({super.key});
@@ -20,13 +20,13 @@ class _LoginScreen11State extends State<LoginScreen11> {
   bool isVisibility = false;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Stack(children: [buildBackground(), buildLayer()]));
+    return Scaffold(body: Stack(children: [buildBackground(), buildLayer()])); 
   }
 
   login() async {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => Drawer11()),
+      MaterialPageRoute(builder: (context) => drawerbottom1()),
     );
   }
 
@@ -125,7 +125,7 @@ class _LoginScreen11State extends State<LoginScreen11> {
                       if (data != null) {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Drawer11()),
+                          MaterialPageRoute(builder: (context) => Drawer_10()),
                         );
                       } else {
                         Fluttertoast.showToast(

@@ -147,8 +147,6 @@ class _RegisterScreen11State extends State<RegisterScreen11> {
                     if (_formKey.currentState!.validate()) {
                       final CustomerModel data = CustomerModel(
                         name: nameController.text,
-                        username: usernameController.text,
-                        phone: phoneController.text,
                         email: emailController.text,
                         password: passwordController.text,
                       );
