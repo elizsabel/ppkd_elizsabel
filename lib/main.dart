@@ -1,4 +1,6 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:ppkd_elizsabel/NavButton/bottom.dart';
 import 'package:ppkd_elizsabel/NavButton/drawer.dart';
 import 'package:ppkd_elizsabel/NavButton/drawer.dart';
@@ -7,6 +9,7 @@ import 'package:ppkd_elizsabel/Tugas13_GlowTap/homecustglow.dart';
 import 'package:ppkd_elizsabel/Tugas_10/login_screen10.dart';
 import 'package:ppkd_elizsabel/Tugas7/menu_tugas7.dart';
 import 'package:ppkd_elizsabel/Tugas15/splash_model11.dart';
+import 'package:ppkd_elizsabel/firebase_options.dart';
 import 'package:ppkd_elizsabel/login_new10/splash_screen.dart';
 import 'package:ppkd_elizsabel/tugas14pokemon/views/screenpokemon.dart';
 import 'package:ppkd_elizsabel/tugas14pokemon/views/splash_screen.dart';
@@ -16,7 +19,9 @@ import 'package:ppkd_elizsabel/tugas9/listview_list.dart';
 import 'package:ppkd_elizsabel/tugasflutter/tugas6.dart';
 import 'package:ppkd_elizsabel/Tugas7/tugas7.dart';
 
-void main() {
+void main() async {
+  await initializeDateFormatting('id_ID', null);
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 

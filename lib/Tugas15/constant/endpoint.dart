@@ -5,3 +5,4 @@ class Endpoint {
   static const String profile = "$baseUrl/profile";
   static const String editprofile = "$baseUrl/profile";
 }
+//https://appabsensi.mobileprojp.com/
